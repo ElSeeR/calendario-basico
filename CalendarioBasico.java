@@ -1,3 +1,4 @@
+
 public class CalendarioBasico{
     private int dia;
     private int mes;
@@ -10,7 +11,29 @@ public class CalendarioBasico{
     }
     
     public String obtenerFecha(){
-        return dia + "-" + mes + "-" + ano;
+        String guardarFecha;
+        guardarFecha = "";
+        if(dia < 10){
+            guardarFecha = guardarFecha + "0" + dia + "-";
+        }
+        else{
+            guardarFecha = guardarFecha + dia + "-";
+        }
+        
+        if(mes < 10){
+            guardarFecha = guardarFecha + "0" + mes + "-";
+        }
+        else{
+            guardarFecha = guardarFecha + mes + "-";
+        }
+        
+        if(ano < 10){
+            guardarFecha = guardarFecha + "0" + ano;
+        }
+        else{
+            guardarFecha = guardarFecha + ano;
+        }
+        return guardarFecha;
     }
     
     public void fijarFecha(int nuevoDia, int nuevoMes, int nuevoAno){
